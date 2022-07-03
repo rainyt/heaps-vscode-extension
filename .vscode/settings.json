@@ -1,0 +1,20 @@
+{
+    "editor.insertSpaces": false,
+    "files.trimTrailingWhitespace": false,
+    "haxe.configurations": [
+        ["build.hxml"]
+    ],
+    "haxe.diagnosticsPathFilter": "${workspaceRoot}/(?!syntaxes/cases)",
+    "codedox": {
+        "commentprefix": "    ",
+        "commentdescription": "",
+        "commentend": "**/",
+        "alwaysMultiline": false,
+        "paramFormat": "",
+        "returnFormat": "",
+        "neverAskTemplate": true
+    },
+    "[haxe]": {
+        "editor.formatOnSave": true
+    }
+}

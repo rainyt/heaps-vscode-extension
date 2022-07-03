@@ -1,0 +1,8 @@
+-cp src
+-D hxnodejs-no-version-warning
+-D analyzer-optimize
+-lib hxnodejs
+-lib vshaxe
+-js bin/heaps-vscode.js
+-dce full
+-main Main
