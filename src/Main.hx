@@ -110,7 +110,7 @@ class Main {
 		if (untyped !api) {
 			trace("Warning: Haxe language server not available (using an incompatible vshaxe version)");
 		} else {
-			displayArgumentsProviderDisposable = api.registerDisplayArgumentsProvider("Hepas", displayArgumentsProvider);
+			displayArgumentsProviderDisposable = api.registerDisplayArgumentsProvider("Heaps", displayArgumentsProvider);
 		}
 	}
 
