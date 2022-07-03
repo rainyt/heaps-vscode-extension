@@ -1,3 +1,5 @@
+import sys.FileSystem;
+import sys.io.File;
 import js.node.Buffer;
 import js.node.ChildProcess;
 import SupportPlatform.Platfrom;
@@ -132,6 +134,10 @@ class Main {
 	public function setTargetConfiguration(targetConfig:TargetItem):Void {
 		if (this.currentTargetItem != null && this.currentTargetItem.label == targetConfig.label)
 			return;
+		if (!FileSystem.exists(getProjectDirectory() + "/zyheaps.xml")) {
+			selectTargetItem.hide();
+			return;
+		}
 		this.currentTargetItem = targetConfig;
 		selectTargetItem.text = currentTargetItem.label;
 		selectTargetItem.show();
