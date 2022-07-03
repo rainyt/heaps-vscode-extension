@@ -1,3 +1,4 @@
 
 bin/heaps-vscode.js
 .DS_Store
+*.vsix

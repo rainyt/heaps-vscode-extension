@@ -1,7 +1,7 @@
 {
 	"name": "heaps-vscode-extension",
 	"version": "0.0.1",
-	"publisher": "rainyt",
+	"publisher": "zygame",
 	"engines": {
 		"vscode": "^1.42.0",
 		"nadako.vshaxe": "^2.19.1"
@@ -27,7 +27,7 @@
 	"homepage": "",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "https://github.com/rainyt/heaps-vscode-extension"
 	},
 	"scripts": {},
 	"main": "bin/heaps-vscode.js",
@@ -69,9 +69,7 @@
 			}
 		]
 	},
-	"dependencies": {
-		"hasbin": "^1.2.3"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"haxe": "^5.2.1"
 	},
