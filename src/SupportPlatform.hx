@@ -10,6 +10,9 @@ class SupportPlatform {
 			name: "ios"
 		},
 		{
+			name: "mac"
+		},
+		{
 			name: "wechat",
 			desc: "微信小游戏"
 		}

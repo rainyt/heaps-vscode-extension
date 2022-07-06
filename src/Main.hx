@@ -192,25 +192,27 @@ class Main {
 	public function provideTasks(?token:CancellationToken):ProviderResult<Array<Task>> {
 		var vshaxe = getVshaxe();
 		var tasks = [];
-		for (item in SupportPlatform.list) {
-			var definition:HeapsTaskDefinition = {
-				"type": "heaps",
-				"command": "haxelib run zyheaps build " + item.name,
-				"targetConfiguration": item.name
-			};
-			var presentation = vshaxe.taskPresentation;
-			var task = createTask(definition, getTaskName(item), definition.command, [], presentation, []);
-			task.group = TaskGroup.Build;
-			tasks.push(task);
-			var definition:HeapsTaskDefinition = {
-				"type": "heaps",
-				"command": "haxelib run zyheaps build " + item.name + " -final",
-				"targetConfiguration": item.name
-			};
-			var presentation = vshaxe.taskPresentation;
-			var task = createTask(definition, getTaskName(item) + " (RELEASE)", definition.command, [], presentation, []);
-			task.group = TaskGroup.Build;
-			tasks.push(task);
+		if (FileSystem.exists(getProjectDirectory() + "/zyheaps.xml")) {
+			for (item in SupportPlatform.list) {
+				var definition:HeapsTaskDefinition = {
+					"type": "heaps",
+					"command": "haxelib run zyheaps build " + item.name,
+					"targetConfiguration": item.name
+				};
+				var presentation = vshaxe.taskPresentation;
+				var task = createTask(definition, getTaskName(item), definition.command, [], presentation, []);
+				task.group = TaskGroup.Build;
+				tasks.push(task);
+				var definition:HeapsTaskDefinition = {
+					"type": "heaps",
+					"command": "haxelib run zyheaps build " + item.name + " -final",
+					"targetConfiguration": item.name
+				};
+				var presentation = vshaxe.taskPresentation;
+				var task = createTask(definition, getTaskName(item) + " (RELEASE)", definition.command, [], presentation, []);
+				task.group = TaskGroup.Build;
+				tasks.push(task);
+			}
 		}
 		return tasks;
 	}
