@@ -13,6 +13,9 @@ class SupportPlatform {
 			name: "mac"
 		},
 		{
+			name: "window"
+		},
+		{
 			name: "wechat",
 			desc: "微信小游戏"
 		}
