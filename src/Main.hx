@@ -111,8 +111,10 @@ class Main {
 
 		if (untyped !api) {
 			trace("Warning: Haxe language server not available (using an incompatible vshaxe version)");
-		} else {
+		} else if (FileSystem.exists(getProjectDirectory() + "/zyheaps.xml")) {
 			displayArgumentsProviderDisposable = api.registerDisplayArgumentsProvider("Heaps", displayArgumentsProvider);
+			// } else {
+			// window.showErrorMessage(getProjectDirectory() + "/zyheaps.xml not found");
 		}
 	}
 

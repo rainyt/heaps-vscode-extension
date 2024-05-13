@@ -6,3 +6,5 @@
 -js bin/heaps-vscode.js
 -dce full
 -main Main
+
+--cmd vsce package
